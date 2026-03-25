@@ -1,6 +1,6 @@
-"# Introduction-to-Artificial-Intelligence-NYC" 
+# Introduction-to-Artificial-Intelligence-NYC 
 
-# 1st Reading Week Homework
+## 1st Reading Week Homework
 ## House Prices Project
 This project compares Regression, Classification, and Clustering techniques on the Kaggle House Prices dataset.
 
