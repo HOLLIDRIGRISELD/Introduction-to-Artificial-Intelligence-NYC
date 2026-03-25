@@ -28,9 +28,8 @@ print("="*60)
 print(df.describe().round(2))
 print("="*60 + "\n")
 
-# ==========================================
+
 # 1. 2D Clustering: Annual Income vs Spending Score
-# ==========================================
 X_2d = df[['Annual Income (k$)', 'Spending Score (1-100)']]
 
 kmeans_2d = KMeans(n_clusters=5, random_state=42, n_init=10)
@@ -47,9 +46,8 @@ plt.xlabel("Annual Income (k$)")
 plt.ylabel("Spending Score (1-100)")
 plt.show() 
 
-# ==========================================
+
 # 2. 3D Clustering: Income, Spending, Age
-# ==========================================
 X_3d = df[['Annual Income (k$)', 'Spending Score (1-100)', 'Age']]
 
 kmeans_3d = KMeans(n_clusters=5, random_state=42, n_init=10)
@@ -72,9 +70,7 @@ ax.set_zlabel('Age')
 plt.legend()
 plt.show()
 
-# ==========================================
 # 3. 2D Clustering: Spending Score vs Age
-# ==========================================
 X_spend_age = df[['Spending Score (1-100)','Age']]
 
 kmeans_spend_age = KMeans(n_clusters=5, random_state=42, n_init=10)
@@ -91,9 +87,8 @@ plt.xlabel("Spending Score (1-100)")
 plt.ylabel("Age")
 plt.show()
 
-# ==========================================
+
 # 4. 2D Clustering: Annual Income vs Age
-# ==========================================
 X_inc_age = df[['Annual Income (k$)','Age']]
 
 kmeans_inc_age = KMeans(n_clusters=5, random_state=42, n_init=10)
@@ -110,9 +105,7 @@ plt.xlabel("Annual Income (k$)")
 plt.ylabel("Age")
 plt.show()
 
-# ==========================================
 # 5. 4D Clustering (Income, Spending, Age, Gender) using Matplotlib
-# ==========================================
 # Encode Gender to numbers
 le = LabelEncoder()
 df['Gender_encoded'] = le.fit_transform(df['Genre'])
