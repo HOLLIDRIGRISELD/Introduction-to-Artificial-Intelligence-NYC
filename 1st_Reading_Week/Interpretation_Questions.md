@@ -16,3 +16,19 @@ Both models struggle with extremely expensive homes (over $400,000), almost alwa
 For normal homes, the market is very logical: buyers are mainly paying for space and good condition. However, the high-end luxury market is much more subjective, emotional, and harder to predict with simple math.
 
 
+
+# Step 2: Classification Task
+### Model Performance
+The Logistic Regression model achieved an accuracy of 81.85% with an F1 score of 0.8140. The Random Forest model performed with an accuracy of 81.16% and an F1 score of 0.8062.
+
+### 1. Which features distinguish expensive houses?
+Just like in the regression task, Overall Quality and Square Footage (Above Ground Living Area) are the main drivers. A newer age (Year Built) also helps push a house from the Medium tier into the Expensive tier.
+
+### 2. What mistakes does the model make?
+Looking at the Confusion Matrix, It mostly makes "adjacent" mistakes, like confusing a Medium house for a Cheap or Expensive one. It almost never makes extreme errors, like predicting a Cheap house is an Expensive one.
+
+### 3. Is the classification boundary meaningful or arbitrary?
+TIt is completely arbitrary. Because we forced the prices into strict 33% buckets, a $1 difference could flip a house from "Medium" to "Expensive." Real-world buyers don't view a $1 difference as a whole new pricing tier.
+
+### 4. Compare interpretability vs. regression
+Classification is much easier to explain to a general audience ("this house is in the top tier"), but Regression is ultimately more useful because it predicts exact dollar amounts instead of throwing away detailed pricing data.
