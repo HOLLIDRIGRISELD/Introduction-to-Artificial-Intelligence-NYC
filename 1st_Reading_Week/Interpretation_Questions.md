@@ -17,6 +17,7 @@ For normal homes, the market is very logical: buyers are mainly paying for space
 
 
 
+
 # Step 2: Classification Task
 ### Model Performance
 The Logistic Regression model achieved an accuracy of 81.85% with an F1 score of 0.8140. The Random Forest model performed with an accuracy of 81.16% and an F1 score of 0.8062.
@@ -32,3 +33,21 @@ TIt is completely arbitrary. Because we forced the prices into strict 33% bucket
 
 ### 4. Compare interpretability vs. regression
 Classification is much easier to explain to a general audience ("this house is in the top tier"), but Regression is ultimately more useful because it predicts exact dollar amounts instead of throwing away detailed pricing data.
+
+
+
+
+# Step 3: Clustering Task
+### Number of clusters
+I chose 3 clusters based on the Elbow Method. The graph's error drops steeply from 1 to 3 before flattening out. This distinct "elbow" shape confirms that 3 is the optimal number of natural groups in the data.
+
+### 1. What defines each cluster?
+* Cluster 0 (Starter Homes): Older homes (1960s) with the lowest square footage, smallest garages, and lowest quality.
+* Cluster 1 (Average Homes): Mid-sized homes of average quality, usually built in the 1970s or 1980s.
+* Cluster 2 (Premium Homes): The newest homes (post-1990) with the largest square footage, highest quality, and multi-car garages.
+
+### 2. Do clusters correspond to Neighborhoods? Price ranges?
+Yes to both. The clusters naturally recreate the Cheap, Medium, and Expensive price tiers from Step 2. They also match specific neighborhoods, separating older areas from wealthy.
+
+### 3. Compare clusters with actual SalePrice: Do expensive houses form their own cluster?
+Yes. Even though the SalePrice was hidden from the algorithm, it naturally grouped the largest, highest-quality houses together into Cluster 2. When we check the hidden prices afterward, Cluster 2 contains almost all of the most expensive homes.
